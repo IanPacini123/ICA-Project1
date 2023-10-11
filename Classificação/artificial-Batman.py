@@ -1,6 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 
-dataS = pd.read_csv("DataSets/artificial/batman/data.csv")
+dataSet = pd.read_csv("DataSets/artificial/batman/data.csv")
 
-print(dataS.T)
+x1 = dataSet["X1"]
+x2 = dataSet["X2"]
+Y = dataSet["Y"]
+
+plt.scatter(x1, x2, c=Y, s = 5)
+plt.show()
