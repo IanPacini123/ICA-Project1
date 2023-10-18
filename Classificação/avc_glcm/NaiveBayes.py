@@ -12,21 +12,19 @@ X_test = dataSet.X_test_raw
 y_train = dataSet.y_train_raw
 y_test = dataSet.y_test_raw
 
-## MLP
-def mlp():
-    from sklearn.neural_network import MLPClassifier
+## Naive Bayes
+## Utilizando função gaussiana apos a analise do tipo de dados do data set(multiplas features, float).
+def gaussian_nb():
+    from sklearn.naive_bayes import GaussianNB
 
-    X_train_w_bias = np.column_stack((X_train, np.ones(X_train.shape[0])))
-    X_test_w_bias = np.column_stack((X_test, np.ones(X_test.shape[0])))
-
-    MLP = MLPClassifier(hidden_layer_sizes=120, activation='relu', solver='adam', max_iter=3500, learning_rate_init=0.1, random_state=42)
+    GNB = GaussianNB()
 
     print("Started Training...")
-    MLP.fit(X_train_w_bias, y_train)
-    
+    GNB.fit(X_train, y_train)
+
     print("\nStarted Testing...")
     # Predict training to check for overfitting
-    y_train_prediction = MLP.predict(X_train_w_bias)
+    y_train_prediction = GNB.predict(X_train)
 
     error = (len(y_train) - sum(y_train_prediction == y_train)) / len(y_train)
 
@@ -35,10 +33,12 @@ def mlp():
     print(f"Training Acurracy: {1 - error}")
 
     # Predict test
-    y_test_prediction = MLP.predict(X_test_w_bias)
+    y_test_prediction = GNB.predict(X_test)
 
     error = (len(y_test) - sum(y_test_prediction == y_test)) / len(y_test)
 
     print("\nTesting Data:")
     print(f"Testing Error: {error}")
-    print(f"Testing Acurracy: {1 - error}")
+    print(f"Testing Acurracy: {1 - error}") 
+
+gaussian_nb()
