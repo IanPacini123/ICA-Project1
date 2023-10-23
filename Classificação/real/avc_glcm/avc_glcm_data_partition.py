@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 
 class Avc_glcm_data:
     def __init__(self) -> None:
-        self.data_set = read_csv("DataSets/real/avc_glcm/data.csv")
+        self.data_set = read_csv("DataSets/real/avc_glcm/data.csv", header=None)
 
         self.X = array(self.data_set.iloc[:, 1:-1])
         self.y = array(self.data_set.iloc[:, -1])

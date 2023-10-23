@@ -2,9 +2,9 @@ from pandas import read_csv
 from numpy import array
 from sklearn.model_selection import train_test_split
 
-class Ban_data:
+class Car_data:
     def __init__(self) -> None:
-        self.data_set = read_csv("DataSets/real/ban/data.csv", header=None)
+        self.data_set = read_csv("DataSets/real/car/data.csv", header=None)
 
         self.X = array(self.data_set.iloc[:, 1:-1])
         self.y = array(self.data_set.iloc[:, -1])
