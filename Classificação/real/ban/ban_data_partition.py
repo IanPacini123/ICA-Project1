@@ -6,7 +6,7 @@ class Ban_data:
     def __init__(self) -> None:
         self.data_set = read_csv("DataSets/real/ban/data.csv", header=None)
 
-        self.X = array(self.data_set.iloc[:, 1:-1])
+        self.X = array(self.data_set.iloc[:, 0:-1])
         self.y = array(self.data_set.iloc[:, -1])
 
         ## Adding random_state helped stabilize the models,

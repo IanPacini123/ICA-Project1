@@ -43,3 +43,5 @@ def mlp():
     print(f"Testing Acurracy: {1 - error}")
 
 mlp()
+
+print(dataSet.y)
