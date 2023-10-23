@@ -9,8 +9,8 @@ X_test = dataSet.X_test_raw
 y_train = dataSet.y_train_raw
 y_test = dataSet.y_test_raw
 
-## SRV - RBF
-def svr_rbf():
+## SVM - RBF
+def svm_rbf():
     from sklearn.svm import SVC
 
     SVM = SVC(kernel='rbf')
@@ -37,8 +37,8 @@ def svr_rbf():
     print(f"Testing Error: {error}")
     print(f"Testing Acurracy: {1 - error}") 
 
-## SRV - Polynomial
-def svr_poly():
+## SVM - Polynomial
+def svm_poly():
     from sklearn.svm import SVC
 
     SVM = SVC(kernel='poly')
@@ -65,8 +65,8 @@ def svr_poly():
     print(f"Testing Error: {error}")
     print(f"Testing Acurracy: {1 - error}") 
 
-## SVR - Linear
-def svr_linear():
+## SVM - Linear
+def svm_linear():
     from sklearn.svm import SVC
 
     SVM = SVC(kernel='linear')
@@ -92,5 +92,3 @@ def svr_linear():
     print("\nTesting Data:")
     print(f"Testing Error: {error}")
     print(f"Testing Acurracy: {1 - error}") 
-
-svr_rbf()
