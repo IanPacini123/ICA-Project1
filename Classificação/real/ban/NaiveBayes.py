@@ -1,10 +1,9 @@
-import pandas as pd
 import numpy as np
 
 ## Data Partition
-from data_partition import Avc_glcm_data
+from ban_data_partition import Ban_data
 
-dataSet = Avc_glcm_data()
+dataSet = Ban_data()
 
 X_train = dataSet.X_train_raw
 X_test = dataSet.X_test_raw

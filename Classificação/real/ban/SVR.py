@@ -1,7 +1,7 @@
 ## Data Partition
-from data_partition import Avc_glcm_data
+from ban_data_partition import Ban_data
 
-dataSet = Avc_glcm_data()
+dataSet = Ban_data()
 
 X_train = dataSet.X_train_raw
 X_test = dataSet.X_test_raw
@@ -11,7 +11,6 @@ y_test = dataSet.y_test_raw
 
 ## SRV - RBF
 def svr_rbf():
-    from sklearn.model_selection import GridSearchCV
     from sklearn.svm import SVC
 
     SVM = SVC(kernel='rbf')
@@ -67,7 +66,6 @@ def svr_poly():
     print(f"Testing Acurracy: {1 - error}") 
 
 ## SVR - Linear
-## Diference in results.
 def svr_linear():
     from sklearn.svm import SVC
 
